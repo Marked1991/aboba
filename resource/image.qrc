@@ -2,5 +2,6 @@
     <qresource prefix="/img">
         <file>image.png</file>
         <file>logo.png</file>
+        <file>AB_check.png</file>
     </qresource>
 </RCC>

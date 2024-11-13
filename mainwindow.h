@@ -20,9 +20,8 @@ public:
 private:
     Ui::MainWindow *ui;
     QPixmap pix;
-    QSize PicSize;
 
 protected:
-    void resizeEvent(QResizeEvent *e)override;
+
 };
 #endif // MAINWINDOW_H
