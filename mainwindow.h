@@ -28,6 +28,8 @@ private:
     void message_mode();
     void packet_mode();
     void clean();
+    void changeLabelVisible(int number, bool state);
+    void clearTrack();
 
 private slots:
     void TimerAlarm();
