@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPixmap>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,6 +22,23 @@ public:
 private:
     Ui::MainWindow *ui;
     QPixmap pix;
+    QTimer *timer;
+    void getSettings();
+    void channel_mode();
+    void message_mode();
+    void packet_mode();
+    void clean();
+
+private slots:
+    void TimerAlarm();
+
+    void on_startBut_clicked();
+
+    void on_stopBut_clicked();
+
+    void on_comboBox_mode_currentIndexChanged(int index);
+
+    void on_comboBox_example_currentIndexChanged(int index);
 
 protected:
 

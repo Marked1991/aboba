@@ -171,10 +171,57 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QComboBox" name="comboBox"/>
+        <widget class="QComboBox" name="comboBox_mode">
+         <item>
+          <property name="text">
+           <string>Канала</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Сообщений</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Пакетов</string>
+          </property>
+         </item>
+        </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_2"/>
+        <widget class="QComboBox" name="comboBox_example">
+         <item>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>3</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>4</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>5</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>6</string>
+          </property>
+         </item>
+        </widget>
        </item>
        <item>
         <spacer name="verticalSpacer_5">
@@ -260,13 +307,6 @@
         <widget class="QPushButton" name="stopBut">
          <property name="text">
           <string>Стоп</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="resetBut">
-         <property name="text">
-          <string>Сбросить</string>
          </property>
         </widget>
        </item>
@@ -534,7 +574,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_164">
+   <widget class="QLabel" name="label_1517">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -553,7 +593,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_174">
+   <widget class="QLabel" name="label_1721">
     <property name="geometry">
      <rect>
       <x>630</x>
@@ -572,7 +612,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_184">
+   <widget class="QLabel" name="label_1734">
     <property name="geometry">
      <rect>
       <x>530</x>
@@ -591,7 +631,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_194">
+   <widget class="QLabel" name="label_2134">
     <property name="geometry">
      <rect>
       <x>740</x>
@@ -762,7 +802,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_334">
+   <widget class="QLabel" name="label_31">
     <property name="geometry">
      <rect>
       <x>440</x>
@@ -781,7 +821,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_214">
+   <widget class="QLabel" name="label_34">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -800,7 +840,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_342">
+   <widget class="QLabel" name="label_32">
     <property name="geometry">
      <rect>
       <x>540</x>
@@ -819,7 +859,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_354">
+   <widget class="QLabel" name="label_33">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -838,7 +878,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_364">
+   <widget class="QLabel" name="label_36">
     <property name="geometry">
      <rect>
       <x>770</x>
@@ -857,7 +897,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_374">
+   <widget class="QLabel" name="label_35">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -876,7 +916,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_384">
+   <widget class="QLabel" name="label_37">
     <property name="geometry">
      <rect>
       <x>870</x>
@@ -895,7 +935,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_394">
+   <widget class="QLabel" name="label_3132">
     <property name="geometry">
      <rect>
       <x>510</x>
@@ -914,7 +954,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_40">
+   <widget class="QLabel" name="label_3234">
     <property name="geometry">
      <rect>
       <x>600</x>
@@ -933,7 +973,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_41">
+   <widget class="QLabel" name="label_3436">
     <property name="geometry">
      <rect>
       <x>720</x>
@@ -952,7 +992,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_42">
+   <widget class="QLabel" name="label_3536">
     <property name="geometry">
      <rect>
       <x>750</x>
@@ -971,7 +1011,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_43">
+   <widget class="QLabel" name="label_3637">
     <property name="geometry">
      <rect>
       <x>820</x>
@@ -1009,7 +1049,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_204">
+   <widget class="QLabel" name="label_3233">
     <property name="geometry">
      <rect>
       <x>570</x>
@@ -1028,7 +1068,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="label_2123">
     <property name="geometry">
      <rect>
       <x>930</x>
@@ -1047,7 +1087,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="label_2325">
     <property name="geometry">
      <rect>
       <x>1030</x>
@@ -1066,7 +1106,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="label_2427">
     <property name="geometry">
      <rect>
       <x>1030</x>
@@ -1085,7 +1125,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="label_2124">
     <property name="geometry">
      <rect>
       <x>920</x>
@@ -1104,7 +1144,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="label_2224">
     <property name="geometry">
      <rect>
       <x>920</x>
@@ -1123,11 +1163,30 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
+   <widget class="QLabel" name="label_2428">
     <property name="geometry">
      <rect>
       <x>1020</x>
       <y>390</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2326">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>180</y>
       <width>31</width>
       <height>21</height>
      </rect>
