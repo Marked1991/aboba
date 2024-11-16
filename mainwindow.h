@@ -3,7 +3,12 @@
 
 #include <QMainWindow>
 #include <QPixmap>
+#include <QPainter>
 #include <QTimer>
+#include <QLabel>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGraphicsRectItem>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -28,8 +33,9 @@ private:
     void message_mode();
     void packet_mode();
     void clean();
-    void changeLabelVisible(char color,int number, bool state);
+    void changeLabelVisible(int number, bool state);
     void clearTrack();
+    void rotate_lable(char* file_name, QLabel* map, float angle);
 
 private slots:
     void TimerAlarm();
@@ -41,8 +47,6 @@ private slots:
     void on_comboBox_mode_currentIndexChanged(int index);
 
     void on_comboBox_example_currentIndexChanged(int index);
-
-    void on_horizontalSlider_valueChanged(int value);
 
 protected:
 
