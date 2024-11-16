@@ -7,6 +7,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QGraphicsScene scene;
+    QGraphicsView view(&scene);
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
