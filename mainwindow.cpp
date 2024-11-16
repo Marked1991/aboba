@@ -40,7 +40,7 @@ MainWindow::~MainWindow()
 void MainWindow::TimerAlarm()  // обработчик таймера для анимаций
 {
     frame+=1;
-    clean();
+ //   clean();
     switch (settings[0]){
     case 1:
         message_mode();
