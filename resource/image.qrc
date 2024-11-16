@@ -3,5 +3,8 @@
         <file>image.png</file>
         <file>logo.png</file>
         <file>AB_check.png</file>
+        <file>BAB_check.png</file>
+        <file>frame_logo.png</file>
+        <file>GAB_check.png</file>
     </qresource>
 </RCC>
