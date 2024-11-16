@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-int settings[6] = {0,0,0,0,100,0}; // глобальная переменная хранящая что сейчас выбрано {mode, example, frame, maxframe, speed, lenght track}
+int settings[6] = {-1,0,0,0,100,0}; // глобальная переменная хранящая что сейчас выбрано {mode, example, frame, maxframe, speed, lenght track}
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -62,14 +62,17 @@ void MainWindow::on_startBut_clicked()
 
     switch (settings[0]){
     case 0:
+        changeLabelVisible('c',0,true);
         channel_mode();
         break;
     case 1:
         message_mode();
+        changeLabelVisible('m',0,true);
         timer ->start(1000*(200-settings[4])/100);
         break;
     case 2:
         packet_mode();
+        changeLabelVisible('p',0,true);
         timer ->start(1000*(200-settings[4])/100);
         break;
     }
@@ -103,17 +106,36 @@ void MainWindow::on_stopBut_clicked()
     clean();
     timer->stop();
     settings[2] = 0;
+    settings[0] = -1;
+    changeLabelVisible('s',0,false);
 }
 
 void MainWindow::clean(){      // очистка всех обозначений пути
     int track[] = {11,12,13,14,15,16,17,18,21,22,23,24,25,26,27,28,31,32,33,34,35,36,37,1115,1215,
                    1517,1316,1416,1618,1721,2123,2325,2326,2124,2428,2822,2134,3132,3234,3233,3536,3637,3436,1734,1617,2224,2427};
+    int track2[] = {};
+    int track3[] = {};
     settings[5] = sizeof(track) / sizeof(int);
     for (int i = 0; i<settings[5]; i++){
         changeLabelVisible('R',track[i],false);
         changeLabelVisible('G',track[i],false);
         changeLabelVisible('B',track[i],false);
         track[i] = 0;
+        track2[i] = 0;
+        track3[i] = 0;
+    }
+    changeLabelVisible('s',0,false);
+
+    switch (settings[0]){
+    case 0:
+        changeLabelVisible('c',0,true);
+        break;
+    case 1:
+        changeLabelVisible('m',0,true);
+        break;
+    case 2:
+        changeLabelVisible('p',0,true);
+        break;
     }
 }
 void MainWindow::channel_mode(){ // обработка для коммутации каналов
@@ -153,6 +175,16 @@ void MainWindow::channel_mode(){ // обработка для коммутаци
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('R',track[i],true);
         }
+        int track2[] = {13,1316,16,1416,14};
+        settings[5] = sizeof(track2) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('B',track2[i],true);
+        }
+        int track3[] = {31,3132,32,3234,34,3436,36,3536,35};
+        settings[5] = sizeof(track3) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('G',track3[i],true);
+        }
         break;
     }
     case 4:
@@ -162,6 +194,16 @@ void MainWindow::channel_mode(){ // обработка для коммутаци
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('R',track[i],true);
         }
+        int track2[] = {13,1316,16,1617,17,1517,15,11115,11};
+        settings[5] = sizeof(track2) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('B',track2[i],true);
+        }
+        int track3[] = {26,2326,23,2325,25};
+        settings[5] = sizeof(track3) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('G',track3[i],true);
+        }
         break;
     }
     case 5:
@@ -170,6 +212,16 @@ void MainWindow::channel_mode(){ // обработка для коммутаци
         settings[5] = sizeof(track) / sizeof(int);
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('R',track[i],true);
+        }
+        int track2[] = {28,2428,24,2124,21,2123,23,2325,25};
+        settings[5] = sizeof(track2) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('B',track2[i],true);
+        }
+        int track3[] = {13,1316,16,1617,17,1517,15,1215,12};
+        settings[5] = sizeof(track3) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('G',track3[i],true);
         }
         break;
     }
@@ -202,23 +254,38 @@ void MainWindow::message_mode(){ // обработка для коммутаци
     }
     case 3:
     {
-        int track[] = {26,2326,23,2123,21,1721,17,1617,16,1316,13};
-        settings[3] = sizeof(track) / sizeof(int);
+        int track[] = {26,2326,23,2123,21,2134,34,1734,17,1617,16,1316,13};
+        int track2[] = {14,1416,16,1617,17,1721,21,2134,34,3234,32,3132,31};
+        int track3[] = {22,2224,24,2124,21,2123,23,2326,26,0,0};
+        settings[3] = sizeof(track2) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > 0) changeLabelVisible('B',track2[settings[2] -1], true);
+        if (settings[2] > 1) changeLabelVisible('G',track3[settings[2] -2], true);
         break;
     }
     case 4:
     {
-        int track[] = {14,1416,16,1617,17,1721,21,2134,34,3234,32,3132,31};
+        int track[] = {31,3132,32,3234,34,2134,21,2124,24,2427,27,0,0};
+        int track2[] = {18,1618,16,1617,17,1721,21,2134,34,3436,36,3637,37,0};
+        int track3[] = {37,3637,36,3436,34,1734,17,1617,16,1316,13};
         settings[3] = sizeof(track) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > 0) changeLabelVisible('B',track2[settings[2] -1], true);
+        if (settings[2] > 1) changeLabelVisible('G',track3[settings[2] -2], true);
         break;
     }
     case 5:
     {
-        int track[] = {22,2224,24,2124,21,2123,23,2326,26};
+        int track[] = {11,1115,15,1517,17,1617,16,1618,18,0};
+        int track2[] = {22,2224,24,2124,21,2123,23,2325,25};
+        int track3[] = {31,3132,32,3234,34,3436,3536,35};
         settings[3] = sizeof(track) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > 0) changeLabelVisible('B',track2[settings[2] -1], true);
+        if (settings[2] > 1) changeLabelVisible('G',track3[settings[2] -2], true);
         break;
     }
     }
@@ -230,13 +297,101 @@ void MainWindow::packet_mode(){ // обработка для коммутаци�
     switch(settings[1]){
     case 0:
     {
-        int track1[] = {13,13,13,1316,16,1617,17,1734,34,3234,32,3233,33};
-        int track2[] = {13,13,1316,16,1617,17,1734,34,3234,32,3233,33};
-        int track3[] = {13,1316,16,1617,17,1734,34,3234,32,3233,33};
-        settings[3] = sizeof(track1) / sizeof(int);
-        changeLabelVisible('R',track1[settings[2]], true);
-        changeLabelVisible('G',track2[settings[2]], true);
-        changeLabelVisible('B',track3[settings[2]], true);
+        int track[] = {11,1115,15,1517,17,1721,21,2124,24,2428,28,0,0};
+        int track2[] = {11,1115,15,1517,17,1734,34,2134,21,24,2428,28,0};
+        int track3[] = {11,1115,15,1517,17,1721,21,2124,24,2428,28};
+        settings[3] = sizeof(track) / sizeof(int);
+        changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > 0) changeLabelVisible('G',track2[settings[2] -1], true);
+        if (settings[2] > 1) changeLabelVisible('B',track3[settings[2] -2], true);
+        break;
+    }
+    case 1:
+    {
+        int track[] = {31,3132,32,3234,34,2134,21,2123,23,2326,26,0,0};
+        int track2[] = {31,3132,32,3234,34,1734,17,1721,21,2123,23,2326,26,0};
+        int track3[] = {31,3132,32,3234,34,2134,21,2123,23,2326,26};
+        settings[3] = sizeof(track) / sizeof(int);
+        changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > 0) changeLabelVisible('G',track2[settings[2] -1], true);
+        if (settings[2] > 1) changeLabelVisible('B',track3[settings[2] -2], true);
+        break;
+    }
+    case 2:
+    {
+        int track11[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0,0};
+        int track12[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0};
+        int track13[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13};
+        int track21[] = {0,11,1115,15,1517,17,1734,34,2134,21,24,2428,28,0,0};
+        int track22[] = {0,11,1115,15,1517,17,1734,34,2134,21,24,2428,28,0};
+        int track23[] = {0,11,1115,15,1517,17,1734,34,2134,21,24,2428,28};
+        settings[3] = sizeof(track11) / sizeof(int);
+        changeLabelVisible('R',track11[settings[2]], true);
+        changeLabelVisible('G',track21[settings[2]], true);
+
+        if (settings[2] > 0){
+            changeLabelVisible('R',track11[settings[2] -1], true);
+            changeLabelVisible('G',track21[settings[2] -1], true);
+        }
+        if (settings[2] > 1){
+            changeLabelVisible('R',track11[settings[2]-2], true);
+            changeLabelVisible('G',track21[settings[2]-2], true);
+        }
+        break;
+    }
+    case 3:
+    {
+        int track[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0,0};
+        int track2[] = {22,2224,24,2124,21,2134,34,1734,17,1617,16,1316,13};
+        int track3[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13};
+        settings[3] = sizeof(track) / sizeof(int);
+        changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > 0) changeLabelVisible('G',track2[settings[2] -1], true);
+        if (settings[2] > 1) changeLabelVisible('B',track3[settings[2] -2], true);
+        break;
+    }
+    case 4:
+    {
+        int track[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0,0};
+        int track2[] = {22,2224,24,2124,21,2134,34,1734,17,1617,16,1316,13};
+        int track3[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13};
+        settings[3] = sizeof(track) / sizeof(int);
+        changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > 0) changeLabelVisible('G',track2[settings[2] -1], true);
+        if (settings[2] > 1) changeLabelVisible('B',track3[settings[2] -2], true);
+        break;
+    }
+    case 5:
+    {
+        int track11[] = {11,1115,15,1517,17,17,1721,21,2124,24,2428,28,0,0};
+        int track12[] = {11,1115,15,1517,17,1734,34,2134,21,24,2428,28,0};
+        int track13[] = {11,1115,15,1517,17,1721,21,2124,24,2428,28};
+        int track21[] = {0,31,3132,32,3234,34,2134,21,2123,23,2326,26,0,0};
+        int track22[] = {0,31,3132,32,3234,34,1734,17,1721,21,2123,23,2326,26,0};
+        int track23[] = {0,3132,32,3234,34,2134,21,2123,23,2326,26};
+        int track31[] = {0,0,0,22,2224,24,2124,21,1721,17,1617,16,1316,13,0,0};
+        int track32[] = {0,0,0,22,2224,24,2124,21,2134,34,1734,17,1617,16,1316,13};
+        int track33[] = {0,0,0,22,2224,24,2124,21,1721,17,1617,16,1316,13};
+        settings[3] = sizeof(track11) / sizeof(int);
+        changeLabelVisible('R',track11[settings[2]], true);
+        changeLabelVisible('G',track21[settings[2]], true);
+        changeLabelVisible('B',track31[settings[2]], true);
+
+        if (settings[2] > 0){
+            changeLabelVisible('R',track11[settings[2] -1], true);
+            changeLabelVisible('G',track21[settings[2] -1], true);
+            changeLabelVisible('B',track31[settings[2] -1], true);
+        }
+        if (settings[2] > 1){
+            changeLabelVisible('R',track11[settings[2]-2], true);
+            changeLabelVisible('G',track21[settings[2]-2], true);
+            changeLabelVisible('B',track31[settings[2]-2], true);
+        }
+
         break;
     }
     }
@@ -689,6 +844,54 @@ void MainWindow::changeLabelVisible(char color,int number, bool state){ // фу�
         }
     }
     break;
+    case 'c':
+        ui->groupBox_message->setVisible(state);
+        ui->label_ch1->setVisible(state);
+        ui->label_ch2->setVisible(state);
+        ui->label_ch3->setVisible(state);
+        ui->label_ms1->setVisible(false);
+        ui->label_ms2->setVisible(false);
+        ui->label_ms3->setVisible(false);
+        ui->label_pc1->setVisible(false);
+        ui->label_pc2->setVisible(false);
+        ui->label_pc3->setVisible(false);
+        break;
+    case 'm':
+        ui->groupBox_message->setVisible(state);
+        ui->label_ms1->setVisible(state);
+        ui->label_ms2->setVisible(state);
+        ui->label_ms3->setVisible(state);
+        ui->label_ch1->setVisible(false);
+        ui->label_ch2->setVisible(false);
+        ui->label_ch3->setVisible(false);
+        ui->label_pc1->setVisible(false);
+        ui->label_pc2->setVisible(false);
+        ui->label_pc3->setVisible(false);
+        break;
+    case 'p':
+        ui->groupBox_message->setVisible(state);
+        ui->label_pc1->setVisible(state);
+        ui->label_pc2->setVisible(state);
+        ui->label_pc3->setVisible(state);
+        ui->label_ms1->setVisible(false);
+        ui->label_ms2->setVisible(false);
+        ui->label_ms3->setVisible(false);
+        ui->label_ch1->setVisible(false);
+        ui->label_ch2->setVisible(false);
+        ui->label_ch3->setVisible(false);
+        break;
+    case 's':
+        ui->groupBox_message->setVisible(false);
+        ui->label_ch1->setVisible(false);
+        ui->label_ch2->setVisible(false);
+        ui->label_ch3->setVisible(false);
+        ui->label_ms1->setVisible(false);
+        ui->label_ms2->setVisible(false);
+        ui->label_ms3->setVisible(false);
+        ui->label_pc1->setVisible(false);
+        ui->label_pc2->setVisible(false);
+        ui->label_pc3->setVisible(false);
+        break;
     }
 
 }
