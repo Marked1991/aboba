@@ -30,6 +30,7 @@ private:
     void message_mode();
     void packet_mode();
     void clean();
+    void on_horizontalSlider_valueChanged(int value);
     void changeLabelVisible(char color,int number, bool state);
     void clearTrack();
     void rotate_lable(char* file_name, QLabel* map, float angle);
@@ -44,8 +45,6 @@ private slots:
     void on_comboBox_mode_currentIndexChanged(int index);
 
     void on_comboBox_example_currentIndexChanged(int index);
-
-    void on_horizontalSlider_valueChanged(int value);
 
 protected:
 
