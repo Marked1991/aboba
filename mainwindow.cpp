@@ -23,6 +23,65 @@ MainWindow::MainWindow(QWidget *parent)
 
     // поворот линий
     rotate_lable(":/img/LinePackets.png", ui->label_1115, 9);
+    rotate_lable(":/img/LinePackets.png", ui->label_1215, -18);
+    rotate_lable(":/img/LinePackets.png", ui->label_1517, 15);
+    rotate_lable(":/img/LinePackets.png", ui->label_2123, -13);
+    rotate_lable(":/img/LinePackets.png", ui->label_2325, -10);
+    rotate_lable(":/img/LinePackets.png", ui->label_2326, 10);
+    rotate_lable(":/img/LinePackets.png", ui->label_1316, 9);
+    rotate_lable(":/img/LinePackets.png", ui->label_1617, -21);
+    rotate_lable(":/img/LinePackets.png", ui->label_1416, -18);
+    rotate_lable(":/img/LinePackets.png", ui->label_1618, 12);
+    rotate_lable(":/img/LinePackets.png", ui->label_2427, -11);
+    rotate_lable(":/img/LinePackets.png", ui->label_2428, 18);
+    rotate_lable(":/img/LinePackets.png", ui->label_2124, 21);
+    rotate_lable(":/img/LinePackets.png", ui->label_2224, -10);
+    rotate_lable(":/img/LinePackets.png", ui->label_3234, -22);
+    rotate_lable(":/img/LinePackets.png", ui->label_3132, -22);
+    rotate_lable(":/img/LinePackets.png", ui->label_3233, 20);
+    rotate_lable(":/img/LinePackets.png", ui->label_3436, 19);
+    rotate_lable(":/img/LinePackets.png", ui->label_3536, -14);
+    rotate_lable(":/img/LinePackets.png", ui->label_3637, 11);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1115, 9);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1215, -18);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1517, 15);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1617, -21);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1316, 9);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1416, -18);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1618, 12);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2123, -13);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2325, -10);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2124, 21);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2326, 10);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2427, -11);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2428, 18);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2224, -10);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3234, -22);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3436, 19);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3637, 11);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3536, -14);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3233, 20);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3132, -22);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1115, 9);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1215, -18);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1517, 15);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1617, -21);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1316, 9);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1416, -18);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1618, 12);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2123, -13);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2325, -10);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2326, 10);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2124, 21);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2427, -11);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2428, 18);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2224, -10);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3436, 19);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3234, -22);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3637, 11);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3536, -14);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3233, 20);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3132, -22);
 
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(TimerAlarm()));
@@ -111,7 +170,7 @@ void MainWindow::on_stopBut_clicked()
     changeLabelVisible('s',0,false);
 }
 
-void MainWindow::clean(){      // очистка всех обозначений пути
+void MainWindow::clean(){  // очистка всех обозначений пути
     int track[] = {11,12,13,14,15,16,17,18,21,22,23,24,25,26,27,28,31,32,33,34,35,36,37,1115,1215,
                    1517,1316,1416,1618,1721,2123,2325,2326,2124,2428,2822,2134,3132,3234,3233,3536,3637,3436,1734,1617,2224,2427};
     int track2[] = {};
@@ -139,6 +198,7 @@ void MainWindow::clean(){      // очистка всех обозначений
         break;
     }
 }
+
 void MainWindow::channel_mode(){ // обработка для коммутации каналов
 
     switch(settings[1]){
@@ -195,7 +255,7 @@ void MainWindow::channel_mode(){ // обработка для коммутаци
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('R',track[i],true);
         }
-        int track2[] = {13,1316,16,1617,17,1517,15,11115,11};
+        int track2[] = {13,1316,16,1617,17,1517,15,1115,11};
         settings[5] = sizeof(track2) / sizeof(int);
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('B',track2[i],true);
@@ -405,7 +465,6 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
     timer ->start(1000*(200-settings[4])/100);
 
 }
-
 
 void MainWindow::changeLabelVisible(char color,int number, bool state){ // функция для более легкой работы с labels
 

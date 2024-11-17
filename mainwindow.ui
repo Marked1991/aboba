@@ -165,9 +165,9 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>1180</x>
+      <x>1190</x>
       <y>40</y>
-      <width>261</width>
+      <width>280</width>
       <height>131</height>
      </rect>
     </property>
@@ -550,17 +550,17 @@
    <widget class="QLabel" name="label_1215">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>180</y>
-      <width>31</width>
-      <height>21</height>
+      <x>210</x>
+      <y>169</y>
+      <width>73</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -588,17 +588,17 @@
    <widget class="QLabel" name="label_1416">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>380</y>
-      <width>31</width>
-      <height>21</height>
+      <x>210</x>
+      <y>372</y>
+      <width>76</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -607,17 +607,17 @@
    <widget class="QLabel" name="label_1618">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>380</y>
-      <width>31</width>
-      <height>21</height>
+      <x>317</x>
+      <y>362</y>
+      <width>78</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -626,17 +626,23 @@
    <widget class="QLabel" name="label_1617">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>260</y>
-      <width>31</width>
-      <height>21</height>
+      <x>300</x>
+      <y>246</y>
+      <width>131</width>
+      <height>81</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -645,17 +651,17 @@
    <widget class="QLabel" name="label_1517">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>170</y>
-      <width>31</width>
-      <height>21</height>
+      <x>313</x>
+      <y>163</y>
+      <width>99</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -664,36 +670,39 @@
    <widget class="QLabel" name="label_1721">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>210</y>
-      <width>31</width>
-      <height>21</height>
+      <x>404</x>
+      <y>194</y>
+      <width>487</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_1734">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>420</y>
-      <width>31</width>
-      <height>21</height>
+      <x>422</x>
+      <y>240</y>
+      <width>240</width>
+      <height>349</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/Line1734.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -702,17 +711,17 @@
    <widget class="QLabel" name="label_2134">
     <property name="geometry">
      <rect>
-      <x>740</x>
-      <y>440</y>
-      <width>31</width>
-      <height>21</height>
+      <x>674</x>
+      <y>234</y>
+      <width>208</width>
+      <height>343</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/Line2134.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1006,17 +1015,17 @@
    <widget class="QLabel" name="label_3132">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>720</y>
-      <width>31</width>
-      <height>21</height>
+      <x>482</x>
+      <y>704</y>
+      <width>87</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1025,17 +1034,17 @@
    <widget class="QLabel" name="label_3234">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>630</y>
-      <width>31</width>
-      <height>21</height>
+      <x>580</x>
+      <y>612</y>
+      <width>87</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1044,17 +1053,17 @@
    <widget class="QLabel" name="label_3436">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>630</y>
-      <width>31</width>
-      <height>21</height>
+      <x>681</x>
+      <y>608</y>
+      <width>97</width>
+      <height>54</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1063,17 +1072,17 @@
    <widget class="QLabel" name="label_3536">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>720</y>
-      <width>31</width>
-      <height>21</height>
+      <x>739</x>
+      <y>709</y>
+      <width>48</width>
+      <height>48</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1082,17 +1091,17 @@
    <widget class="QLabel" name="label_3637">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>710</y>
-      <width>31</width>
-      <height>21</height>
+      <x>811</x>
+      <y>695</y>
+      <width>51</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1101,17 +1110,17 @@
    <widget class="QLabel" name="label_1316">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>320</y>
-      <width>31</width>
-      <height>21</height>
+      <x>213</x>
+      <y>302</y>
+      <width>63</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1120,17 +1129,17 @@
    <widget class="QLabel" name="label_3233">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>710</y>
-      <width>31</width>
-      <height>21</height>
+      <x>560</x>
+      <y>702</y>
+      <width>48</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1139,17 +1148,17 @@
    <widget class="QLabel" name="label_2123">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>170</y>
-      <width>31</width>
-      <height>21</height>
+      <x>890</x>
+      <y>163</y>
+      <width>87</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1158,17 +1167,17 @@
    <widget class="QLabel" name="label_2325">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>110</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1016</x>
+      <y>97</y>
+      <width>65</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1177,17 +1186,17 @@
    <widget class="QLabel" name="label_2427">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>310</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1010</x>
+      <y>297</y>
+      <width>75</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1196,17 +1205,17 @@
    <widget class="QLabel" name="label_2124">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>290</y>
-      <width>31</width>
-      <height>21</height>
+      <x>868</x>
+      <y>250</y>
+      <width>118</width>
+      <height>75</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1215,17 +1224,17 @@
    <widget class="QLabel" name="label_2224">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>370</y>
-      <width>31</width>
-      <height>21</height>
+      <x>900</x>
+      <y>358</y>
+      <width>69</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1234,17 +1243,17 @@
    <widget class="QLabel" name="label_2428">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>390</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1002</x>
+      <y>371</y>
+      <width>69</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1253,17 +1262,17 @@
    <widget class="QLabel" name="label_2326">
     <property name="geometry">
      <rect>
-      <x>1040</x>
-      <y>180</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1017</x>
+      <y>166</y>
+      <width>73</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/AB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/LinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1291,17 +1300,17 @@
    <widget class="QLabel" name="label_B1115">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>110</y>
-      <width>31</width>
-      <height>21</height>
+      <x>213</x>
+      <y>97</y>
+      <width>63</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1348,17 +1357,17 @@
    <widget class="QLabel" name="label_B1517">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>170</y>
-      <width>31</width>
-      <height>21</height>
+      <x>313</x>
+      <y>163</y>
+      <width>99</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1367,17 +1376,17 @@
    <widget class="QLabel" name="label_B1215">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>180</y>
-      <width>31</width>
-      <height>21</height>
+      <x>210</x>
+      <y>169</y>
+      <width>73</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1747,17 +1756,17 @@
    <widget class="QLabel" name="label_B1617">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>260</y>
-      <width>31</width>
-      <height>21</height>
+      <x>300</x>
+      <y>246</y>
+      <width>131</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1766,17 +1775,17 @@
    <widget class="QLabel" name="label_B1316">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>320</y>
-      <width>31</width>
-      <height>21</height>
+      <x>213</x>
+      <y>302</y>
+      <width>63</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1785,17 +1794,17 @@
    <widget class="QLabel" name="label_B1416">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>380</y>
-      <width>31</width>
-      <height>21</height>
+      <x>210</x>
+      <y>372</y>
+      <width>76</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1804,17 +1813,17 @@
    <widget class="QLabel" name="label_B1618">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>380</y>
-      <width>31</width>
-      <height>21</height>
+      <x>317</x>
+      <y>362</y>
+      <width>78</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1823,17 +1832,17 @@
    <widget class="QLabel" name="label_B2134">
     <property name="geometry">
      <rect>
-      <x>740</x>
-      <y>440</y>
-      <width>31</width>
-      <height>21</height>
+      <x>674</x>
+      <y>234</y>
+      <width>208</width>
+      <height>343</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLine2134.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1842,17 +1851,17 @@
    <widget class="QLabel" name="label_B1734">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>420</y>
-      <width>31</width>
-      <height>21</height>
+      <x>422</x>
+      <y>240</y>
+      <width>240</width>
+      <height>349</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLine1734.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1861,17 +1870,17 @@
    <widget class="QLabel" name="label_B1721">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>210</y>
-      <width>31</width>
-      <height>21</height>
+      <x>404</x>
+      <y>194</y>
+      <width>487</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1880,17 +1889,17 @@
    <widget class="QLabel" name="label_B2224">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>370</y>
-      <width>31</width>
-      <height>21</height>
+      <x>900</x>
+      <y>358</y>
+      <width>69</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1899,17 +1908,17 @@
    <widget class="QLabel" name="label_B2428">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>390</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1002</x>
+      <y>371</y>
+      <width>69</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1918,17 +1927,17 @@
    <widget class="QLabel" name="label_B2124">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>290</y>
-      <width>31</width>
-      <height>21</height>
+      <x>868</x>
+      <y>250</y>
+      <width>118</width>
+      <height>75</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1937,17 +1946,17 @@
    <widget class="QLabel" name="label_B2427">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>310</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1010</x>
+      <y>297</y>
+      <width>75</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1956,17 +1965,17 @@
    <widget class="QLabel" name="label_B2326">
     <property name="geometry">
      <rect>
-      <x>1040</x>
-      <y>180</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1017</x>
+      <y>166</y>
+      <width>73</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1975,17 +1984,17 @@
    <widget class="QLabel" name="label_B2123">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>170</y>
-      <width>31</width>
-      <height>21</height>
+      <x>890</x>
+      <y>163</y>
+      <width>87</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1994,17 +2003,17 @@
    <widget class="QLabel" name="label_B2325">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>110</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1016</x>
+      <y>97</y>
+      <width>65</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2013,17 +2022,17 @@
    <widget class="QLabel" name="label_B3637">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>710</y>
-      <width>31</width>
-      <height>21</height>
+      <x>811</x>
+      <y>695</y>
+      <width>51</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2032,17 +2041,17 @@
    <widget class="QLabel" name="label_B3536">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>720</y>
-      <width>31</width>
-      <height>21</height>
+      <x>739</x>
+      <y>709</y>
+      <width>48</width>
+      <height>48</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2051,17 +2060,17 @@
    <widget class="QLabel" name="label_B3436">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>630</y>
-      <width>31</width>
-      <height>21</height>
+      <x>681</x>
+      <y>608</y>
+      <width>97</width>
+      <height>54</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2070,17 +2079,17 @@
    <widget class="QLabel" name="label_B3234">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>630</y>
-      <width>31</width>
-      <height>21</height>
+      <x>580</x>
+      <y>612</y>
+      <width>87</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2089,17 +2098,17 @@
    <widget class="QLabel" name="label_B3233">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>710</y>
-      <width>31</width>
-      <height>21</height>
+      <x>560</x>
+      <y>702</y>
+      <width>48</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2108,17 +2117,17 @@
    <widget class="QLabel" name="label_B3132">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>720</y>
-      <width>31</width>
-      <height>21</height>
+      <x>482</x>
+      <y>704</y>
+      <width>87</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/BAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/BLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2583,17 +2592,17 @@
    <widget class="QLabel" name="label_G1115">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>110</y>
-      <width>31</width>
-      <height>21</height>
+      <x>213</x>
+      <y>97</y>
+      <width>63</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2602,17 +2611,17 @@
    <widget class="QLabel" name="label_G1215">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>180</y>
-      <width>31</width>
-      <height>21</height>
+      <x>210</x>
+      <y>169</y>
+      <width>73</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2621,17 +2630,17 @@
    <widget class="QLabel" name="label_G1316">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>320</y>
-      <width>31</width>
-      <height>21</height>
+      <x>213</x>
+      <y>302</y>
+      <width>63</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2640,17 +2649,17 @@
    <widget class="QLabel" name="label_G1416">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>380</y>
-      <width>31</width>
-      <height>21</height>
+      <x>210</x>
+      <y>372</y>
+      <width>76</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2659,17 +2668,17 @@
    <widget class="QLabel" name="label_G1618">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>380</y>
-      <width>31</width>
-      <height>21</height>
+      <x>317</x>
+      <y>362</y>
+      <width>78</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2678,17 +2687,17 @@
    <widget class="QLabel" name="label_G1617">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>260</y>
-      <width>31</width>
-      <height>21</height>
+      <x>300</x>
+      <y>246</y>
+      <width>131</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2697,17 +2706,17 @@
    <widget class="QLabel" name="label_G1517">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>170</y>
-      <width>31</width>
-      <height>21</height>
+      <x>313</x>
+      <y>163</y>
+      <width>99</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2716,17 +2725,17 @@
    <widget class="QLabel" name="label_G1734">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>420</y>
-      <width>31</width>
-      <height>21</height>
+      <x>422</x>
+      <y>240</y>
+      <width>240</width>
+      <height>349</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLine1734.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2735,17 +2744,17 @@
    <widget class="QLabel" name="label_G2134">
     <property name="geometry">
      <rect>
-      <x>740</x>
-      <y>440</y>
-      <width>31</width>
-      <height>21</height>
+      <x>674</x>
+      <y>234</y>
+      <width>208</width>
+      <height>343</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLine2134.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2754,17 +2763,17 @@
    <widget class="QLabel" name="label_G1721">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>210</y>
-      <width>31</width>
-      <height>21</height>
+      <x>404</x>
+      <y>194</y>
+      <width>487</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2773,17 +2782,17 @@
    <widget class="QLabel" name="label_G2224">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>370</y>
-      <width>31</width>
-      <height>21</height>
+      <x>900</x>
+      <y>358</y>
+      <width>69</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2792,17 +2801,17 @@
    <widget class="QLabel" name="label_G2124">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>290</y>
-      <width>31</width>
-      <height>21</height>
+      <x>868</x>
+      <y>250</y>
+      <width>118</width>
+      <height>75</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2811,17 +2820,17 @@
    <widget class="QLabel" name="label_G2123">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>170</y>
-      <width>31</width>
-      <height>21</height>
+      <x>890</x>
+      <y>163</y>
+      <width>87</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2830,17 +2839,17 @@
    <widget class="QLabel" name="label_G2428">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>390</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1002</x>
+      <y>371</y>
+      <width>69</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2849,17 +2858,17 @@
    <widget class="QLabel" name="label_G2427">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>310</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1010</x>
+      <y>297</y>
+      <width>75</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2868,17 +2877,17 @@
    <widget class="QLabel" name="label_G2326">
     <property name="geometry">
      <rect>
-      <x>1040</x>
-      <y>180</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1017</x>
+      <y>166</y>
+      <width>73</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2887,17 +2896,17 @@
    <widget class="QLabel" name="label_G2325">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>110</y>
-      <width>31</width>
-      <height>21</height>
+      <x>1016</x>
+      <y>97</y>
+      <width>65</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2906,17 +2915,17 @@
    <widget class="QLabel" name="label_G3234">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>630</y>
-      <width>31</width>
-      <height>21</height>
+      <x>580</x>
+      <y>612</y>
+      <width>87</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2925,17 +2934,17 @@
    <widget class="QLabel" name="label_G3436">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>630</y>
-      <width>31</width>
-      <height>21</height>
+      <x>681</x>
+      <y>608</y>
+      <width>97</width>
+      <height>54</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2944,17 +2953,17 @@
    <widget class="QLabel" name="label_G3637">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>710</y>
-      <width>31</width>
-      <height>21</height>
+      <x>811</x>
+      <y>695</y>
+      <width>51</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2963,17 +2972,17 @@
    <widget class="QLabel" name="label_G3536">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>720</y>
-      <width>31</width>
-      <height>21</height>
+      <x>739</x>
+      <y>709</y>
+      <width>48</width>
+      <height>48</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2982,17 +2991,17 @@
    <widget class="QLabel" name="label_G3233">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>710</y>
-      <width>31</width>
-      <height>21</height>
+      <x>560</x>
+      <y>702</y>
+      <width>48</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -3001,17 +3010,17 @@
    <widget class="QLabel" name="label_G3132">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>720</y>
-      <width>31</width>
-      <height>21</height>
+      <x>482</x>
+      <y>704</y>
+      <width>87</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource/image.qrc">:/img/GAB_check.png</pixmap>
+     <pixmap resource="resource/image.qrc">:/img/GLinePackets.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
