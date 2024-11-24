@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-int settings[6] = {-1,0,0,0,100,0}; // глобальная переменная хранящая что сейчас выбрано {mode, example, frame, maxframe, speed, lenght track}
+int settings[6] = {-1,0,0,0,110,0}; // глобальная переменная хранящая что сейчас выбрано {mode, example, frame, maxframe, speed, lenght track}
+bool isStarted = false;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,20 +12,18 @@ MainWindow::MainWindow(QWidget *parent)
     //скрываем все обозначения пути (если придумаешь как это сделать лучше поправь)
     clean();
 
-
     QPixmap pix(":/img/image.png"); // грузим картинку связи
     QSize pixSize(1000, 900);
     pix.scaled(pixSize,Qt::KeepAspectRatio);
     ui->image->setPixmap(pix);
 
-
-    QPixmap logopix(":/img/logo.png"); // грузим лого ВУЦ
-    QSize logoSize(100, 100);
-    logopix.scaled(logoSize,Qt::KeepAspectRatio);
-    ui->logo->setPixmap(logopix);
+    startRotate();
 
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(TimerAlarm()));
+
+   ui->groupBox_2 ->setStyleSheet("QGroupBox#groupBox_2 {border:0;}"); //убираем рамки у боксов
+   ui->groupBox ->setStyleSheet("QGroupBox#groupBox {border:0;}");
 
 
 }
@@ -68,14 +67,16 @@ void MainWindow::on_startBut_clicked()
     case 1:
         message_mode();
         changeLabelVisible('m',0,true);
-        timer ->start(1000*(200-settings[4])/100);
+        timerControl(1);
         break;
     case 2:
         packet_mode();
         changeLabelVisible('p',0,true);
-        timer ->start(1000*(200-settings[4])/100);
+        timerControl(1);
         break;
     }
+
+    isStarted = true;
 
 }
 
@@ -89,28 +90,33 @@ void MainWindow::getSettings() // записываем в переменную �
 void MainWindow::on_comboBox_mode_currentIndexChanged(int index) // на случай смены во время работы режима работы
 {
     getSettings();
+    if (isStarted){
     on_stopBut_clicked();
     on_startBut_clicked();
+    }
 }
 
 
 void MainWindow::on_comboBox_example_currentIndexChanged(int index) // на случай смены во время работы примера
 {
     getSettings();
-    on_stopBut_clicked();
-    on_startBut_clicked();
+    if (isStarted){
+        on_stopBut_clicked();
+        on_startBut_clicked();
+    }
 }
 
 void MainWindow::on_stopBut_clicked()
 {
     clean();
-    timer->stop();
+    timerControl(0);
     settings[2] = 0;
     settings[0] = -1;
     changeLabelVisible('s',0,false);
+    isStarted = false;
 }
 
-void MainWindow::clean(){      // очистка всех обозначений пути
+void MainWindow::clean(){  // очистка всех обозначений пути
     int track[] = {11,12,13,14,15,16,17,18,21,22,23,24,25,26,27,28,31,32,33,34,35,36,37,1115,1215,
                    1517,1316,1416,1618,1721,2123,2325,2326,2124,2428,2822,2134,3132,3234,3233,3536,3637,3436,1734,1617,2224,2427};
     int track2[] = {};
@@ -138,6 +144,7 @@ void MainWindow::clean(){      // очистка всех обозначений
         break;
     }
 }
+
 void MainWindow::channel_mode(){ // обработка для коммутации каналов
 
     switch(settings[1]){
@@ -194,7 +201,7 @@ void MainWindow::channel_mode(){ // обработка для коммутаци
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('R',track[i],true);
         }
-        int track2[] = {13,1316,16,1617,17,1517,15,11115,11};
+        int track2[] = {13,1316,16,1617,17,1517,15,1115,11};
         settings[5] = sizeof(track2) / sizeof(int);
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('B',track2[i],true);
@@ -321,6 +328,18 @@ void MainWindow::packet_mode(){ // обработка для коммутаци�
     }
     case 2:
     {
+        int track[] = {28,2428,24,2124,21,1721,17,1517,15,1215,12,0,0};
+        int track2[] = {28,2428,24,2124,21,1721,17,1517,15,1215,12,0};
+        int track3[] = {28,2428,24,2124,21,1721,17,1517,15,1215,12};
+        settings[3] = sizeof(track) / sizeof(int);
+        changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > 0) changeLabelVisible('G',track2[settings[2] -1], true);
+        if (settings[2] > 1) changeLabelVisible('B',track3[settings[2] -2], true);
+        break;
+    }
+    case 3:
+    {
         int track11[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0,0};
         int track12[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0};
         int track13[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13};
@@ -341,57 +360,54 @@ void MainWindow::packet_mode(){ // обработка для коммутаци�
         }
         break;
     }
-    case 3:
-    {
-        int track[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0,0};
-        int track2[] = {22,2224,24,2124,21,2134,34,1734,17,1617,16,1316,13};
-        int track3[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13};
-        settings[3] = sizeof(track) / sizeof(int);
-        changeLabelVisible('R',track[settings[2]], true);
-
-        if (settings[2] > 0) changeLabelVisible('G',track2[settings[2] -1], true);
-        if (settings[2] > 1) changeLabelVisible('B',track3[settings[2] -2], true);
-        break;
-    }
     case 4:
     {
-        int track[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0,0};
-        int track2[] = {22,2224,24,2124,21,2134,34,1734,17,1617,16,1316,13};
-        int track3[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13};
-        settings[3] = sizeof(track) / sizeof(int);
-        changeLabelVisible('R',track[settings[2]], true);
+        int track11[] = {31,3132,32,3234,34,3436,36,3637,37,0,0};
+        int track12[] = {31,3132,32,3234,34,3436,36,3637,37,0};
+        int track13[] = {31,3132,32,3234,34,3436,36,3637,37};
+        int track21[] = {11,1115,15,1517,17,1617,16,1618,18,0,0};
+        int track22[] = {11,1115,15,1517,17,1617,16,1618,18,0};
+        int track23[] = {11,1115,15,1517,17,1617,16,1618,18};
+        settings[3] = sizeof(track11) / sizeof(int);
+        changeLabelVisible('R',track11[settings[2]], true);
+        changeLabelVisible('R',track21[settings[2]], true);
 
-        if (settings[2] > 0) changeLabelVisible('G',track2[settings[2] -1], true);
-        if (settings[2] > 1) changeLabelVisible('B',track3[settings[2] -2], true);
+        if (settings[2] > 0){
+            changeLabelVisible('B',track11[settings[2] -1], true);
+            changeLabelVisible('B',track21[settings[2] -1], true);
+        }
+        if (settings[2] > 1){
+            changeLabelVisible('G',track11[settings[2]-2], true);
+            changeLabelVisible('G',track21[settings[2]-2], true);
+        }
         break;
     }
     case 5:
     {
-        int track11[] = {11,1115,15,1517,17,17,1721,21,2124,24,2428,28,0,0};
-        int track12[] = {11,1115,15,1517,17,1734,34,2134,21,24,2428,28,0};
-        int track13[] = {11,1115,15,1517,17,1721,21,2124,24,2428,28};
-        int track21[] = {0,31,3132,32,3234,34,2134,21,2123,23,2326,26,0,0};
-        int track22[] = {0,31,3132,32,3234,34,1734,17,1721,21,2123,23,2326,26,0};
-        int track23[] = {0,3132,32,3234,34,2134,21,2123,23,2326,26};
-        int track31[] = {0,0,0,22,2224,24,2124,21,1721,17,1617,16,1316,13,0,0};
-        int track32[] = {0,0,0,22,2224,24,2124,21,2134,34,1734,17,1617,16,1316,13};
-        int track33[] = {0,0,0,22,2224,24,2124,21,1721,17,1617,16,1316,13};
+        int track11[] = {31,3132,32,3234,34,3436,36,3637,37,0,0};
+        int track12[] = {31,3132,32,3234,34,3436,36,3637,37,0};
+        int track13[] = {31,3132,32,3234,34,3436,36,3637,37};
+        int track21[] = {11,1115,15,1517,17,1617,16,1618,18,0,0};
+        int track22[] = {11,1115,15,1517,17,1617,16,1618,18,0};
+        int track23[] = {11,1115,15,1517,17,1617,16,1618,18};
+        int track31[] = {26,2326,23,2123,21,2124,24,2224,22,0,0};
+        int track32[] = {26,2326,23,2123,21,2124,24,2224,22,0};
+        int track33[] = {26,2326,23,2123,21,2124,24,2224,22};
         settings[3] = sizeof(track11) / sizeof(int);
         changeLabelVisible('R',track11[settings[2]], true);
-        changeLabelVisible('G',track21[settings[2]], true);
-        changeLabelVisible('B',track31[settings[2]], true);
+        changeLabelVisible('R',track21[settings[2]], true);
+        changeLabelVisible('R',track31[settings[2]], true);
 
         if (settings[2] > 0){
-            changeLabelVisible('R',track11[settings[2] -1], true);
-            changeLabelVisible('G',track21[settings[2] -1], true);
-            changeLabelVisible('B',track31[settings[2] -1], true);
+            changeLabelVisible('B',track12[settings[2] -1], true);
+            changeLabelVisible('B',track22[settings[2] -1], true);
+            changeLabelVisible('B',track32[settings[2] -1], true);
         }
         if (settings[2] > 1){
-            changeLabelVisible('R',track11[settings[2]-2], true);
-            changeLabelVisible('G',track21[settings[2]-2], true);
-            changeLabelVisible('B',track31[settings[2]-2], true);
+            changeLabelVisible('G',track13[settings[2]-2], true);
+            changeLabelVisible('G',track23[settings[2]-2], true);
+            changeLabelVisible('G',track33[settings[2]-2], true);
         }
-
         break;
     }
     }
@@ -400,11 +416,93 @@ void MainWindow::packet_mode(){ // обработка для коммутаци�
 void MainWindow::on_horizontalSlider_valueChanged(int value)
 {
     settings[4] = value;
-    timer->stop();
-    timer ->start(1000*(200-settings[4])/100);
+    timerControl(2);
+}
+
+
+void MainWindow::timerControl(int mode){
+    switch (mode){
+    case 1:
+        timer ->start(90*(300-settings[4])/300);
+        break;
+    case 0:
+        timer -> stop();
+        break;
+    case 2:
+        timer->stop();
+        timer->start(90*(300-settings[4])/300);
+        break;
+
+    }
+
 
 }
 
+
+void MainWindow::startRotate(){
+    // поворот линий
+    rotate_lable(":/img/LinePackets.png", ui->label_1115, 9);
+    rotate_lable(":/img/LinePackets.png", ui->label_1215, -18);
+    rotate_lable(":/img/LinePackets.png", ui->label_1517, 15);
+    rotate_lable(":/img/LinePackets.png", ui->label_2123, -13);
+    rotate_lable(":/img/LinePackets.png", ui->label_2325, -10);
+    rotate_lable(":/img/LinePackets.png", ui->label_2326, 10);
+    rotate_lable(":/img/LinePackets.png", ui->label_1316, 9);
+    rotate_lable(":/img/LinePackets.png", ui->label_1617, -21);
+    rotate_lable(":/img/LinePackets.png", ui->label_1416, -18);
+    rotate_lable(":/img/LinePackets.png", ui->label_1618, 12);
+    rotate_lable(":/img/LinePackets.png", ui->label_2427, -11);
+    rotate_lable(":/img/LinePackets.png", ui->label_2428, 18);
+    rotate_lable(":/img/LinePackets.png", ui->label_2124, 21);
+    rotate_lable(":/img/LinePackets.png", ui->label_2224, -10);
+    rotate_lable(":/img/LinePackets.png", ui->label_3234, -22);
+    rotate_lable(":/img/LinePackets.png", ui->label_3132, -22);
+    rotate_lable(":/img/LinePackets.png", ui->label_3233, 20);
+    rotate_lable(":/img/LinePackets.png", ui->label_3436, 19);
+    rotate_lable(":/img/LinePackets.png", ui->label_3536, -14);
+    rotate_lable(":/img/LinePackets.png", ui->label_3637, 11);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1115, 9);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1215, -18);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1517, 15);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1617, -21);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1316, 9);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1416, -18);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1618, 12);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2123, -13);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2325, -10);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2124, 21);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2326, 10);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2427, -11);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2428, 18);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2224, -10);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3234, -22);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3436, 19);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3637, 11);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3536, -14);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3233, 20);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3132, -22);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1115, 9);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1215, -18);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1517, 15);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1617, -21);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1316, 9);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1416, -18);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1618, 12);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2123, -13);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2325, -10);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2326, 10);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2124, 21);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2427, -11);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2428, 18);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2224, -10);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3436, 19);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3234, -22);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3637, 11);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3536, -14);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3233, 20);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3132, -22);
+
+}
 
 void MainWindow::changeLabelVisible(char color,int number, bool state){ // функция для более легкой работы с labels
 
@@ -895,4 +993,26 @@ void MainWindow::changeLabelVisible(char color,int number, bool state){ // фу�
     }
 
 }
+
+void MainWindow::rotate_lable(char* file_name, QLabel* map, float angle){ // функция для поворота lables
+
+    QPixmap ship(file_name);
+    QPixmap rotate(ship.size());
+    rotate.fill(Qt::transparent);
+
+    QPainter p(&rotate);
+    p.setRenderHint(QPainter::Antialiasing);
+    p.setRenderHint(QPainter::SmoothPixmapTransform);
+    p.translate(ship.size().width() / 2, ship.size().height() / 2);
+    p.rotate(angle);
+    p.translate(-ship.size().width() / 2, -ship.size().height() / 2);
+
+    p.drawPixmap(0, 0, ship);
+    p.end();
+
+    map->setPixmap(rotate);
+
+}
+
+
 
