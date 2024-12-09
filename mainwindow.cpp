@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     //скрываем все обозначения пути (если придумаешь как это сделать лучше поправь)
     clean();
 
-    QPixmap pix(":/img/image.png"); // грузим картинку связи
+    QPixmap pix(":/img/svaz.png"); // грузим картинку связи
     QSize pixSize(1000, 900);
     pix.scaled(pixSize,Qt::KeepAspectRatio);
     ui->image->setPixmap(pix);
