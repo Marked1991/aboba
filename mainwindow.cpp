@@ -156,14 +156,34 @@ void MainWindow::channel_mode(){ // обработка для коммутаци
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('R',track[i],true);
         }
+        int track2[] = {41,4146,4649,49,3449,34,3436,36,3536};
+        settings[5] = sizeof(track2) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('B',track2[i],true);
+        }
+        int track3[] = {43,4347,47,4447,44};
+        settings[5] = sizeof(track3) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('G',track3[i],true);
+        }
         break;
     }
     case 1:
     {
-        int track[] = {12,1215,15,1517,17,1734,3234,34,32,3132,31};
+        int track[] = {12,1215,15,1517,17,1749,49,3449,34,3234,32,3132,31};
         settings[5] = sizeof(track) / sizeof(int);
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('R',track[i],true);
+        }
+        int track2[] = {25,2325,23,2123,21,2124,2224,22};
+        settings[5] = sizeof(track2) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('B',track2[i],true);
+        }
+        int track3[] = {45,4546,46,4246,42};
+        settings[5] = sizeof(track3) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('G',track3[i],true);
         }
         break;
     }
@@ -173,6 +193,16 @@ void MainWindow::channel_mode(){ // обработка для коммутаци
         settings[5] = sizeof(track) / sizeof(int);
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('R',track[i],true);
+        }
+        int track2[] = {26,2326,23,2123,21,2124,24,2427,27};
+        settings[5] = sizeof(track2) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('B',track2[i],true);
+        }
+        int track3[] = {31,3132,32,3234,34,3436,36,3536,35};
+        settings[5] = sizeof(track3) / sizeof(int);
+        for (int i = 0; i<settings[5]; i++){
+            changeLabelVisible('G',track3[i],true);
         }
         break;
     }
