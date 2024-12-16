@@ -119,7 +119,7 @@ void MainWindow::on_stopBut_clicked()
 void MainWindow::clean(){  // очистка всех обозначений пути
     int track[] = {11,12,13,14,15,16,17,18,21,22,23,24,25,26,27,28,31,32,33,34,35,36,37,1115,1215,
                    1517,1316,1416,1618,1721,2123,2325,2326,2124,2428,2822,2134,3132,3234,3233,3536,3637,3436,1734,1617,2224,2427,41,42,43,44,45,
-                    46,47,48,49};
+                    46,47,48,49,1749,3449,4146,4546,4246,4649,4347,4447,4748,4749};
     int track2[] = {};
     int track3[] = {};
     settings[5] = sizeof(track) / sizeof(int);
@@ -424,14 +424,14 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
 void MainWindow::timerControl(int mode){
     switch (mode){
     case 1:
-        timer ->start(90*(300-settings[4])/300);
+        timer ->start(150*(300-settings[4])/300);
         break;
     case 0:
         timer -> stop();
         break;
     case 2:
         timer->stop();
-        timer->start(90*(300-settings[4])/300);
+        timer->start(150*(300-settings[4])/300);
         break;
 
     }
@@ -631,9 +631,6 @@ void MainWindow::changeLabelVisible(char color,int number, bool state){ // фу�
         case 1721:
             ui->label_1721->setVisible(state);
             break;
-        case 1734:
-            ui->label_1734->setVisible(state);
-            break;
         case 2134:
             ui->label_2134->setVisible(state);
             break;
@@ -675,6 +672,36 @@ void MainWindow::changeLabelVisible(char color,int number, bool state){ // фу�
             break;
         case 3436:
             ui->label_3436->setVisible(state);
+            break;
+        case 1749:
+            ui->label_1749->setVisible(state);
+            break;
+        case 3449:
+            ui->label_3449->setVisible(state);
+            break;
+        case 4146:
+            ui->label_4146->setVisible(state);
+            break;
+        case 4546:
+            ui->label_4546->setVisible(state);
+            break;
+        case 4246:
+            ui->label_4246->setVisible(state);
+            break;
+        case 4649:
+            ui->label_4649->setVisible(state);
+            break;
+        case 4347:
+            ui->label_4347->setVisible(state);
+            break;
+        case 4447:
+            ui->label_4447->setVisible(state);
+            break;
+        case 4748:
+            ui->label_4748->setVisible(state);
+            break;
+        case 4749:
+            ui->label_4749->setVisible(state);
             break;
         }
         break;
@@ -803,9 +830,6 @@ void MainWindow::changeLabelVisible(char color,int number, bool state){ // фу�
         case 1721:
             ui->label_B1721->setVisible(state);
             break;
-        case 1734:
-            ui->label_B1734->setVisible(state);
-            break;
         case 2134:
             ui->label_B2134->setVisible(state);
             break;
@@ -847,6 +871,36 @@ void MainWindow::changeLabelVisible(char color,int number, bool state){ // фу�
             break;
         case 3436:
             ui->label_B3436->setVisible(state);
+            break;
+        case 1749:
+            ui->label_B1749->setVisible(state);
+            break;
+        case 3449:
+            ui->label_B3449->setVisible(state);
+            break;
+        case 4146:
+            ui->label_B4146->setVisible(state);
+            break;
+        case 4546:
+            ui->label_B4546->setVisible(state);
+            break;
+        case 4246:
+            ui->label_B4246->setVisible(state);
+            break;
+        case 4649:
+            ui->label_B4649->setVisible(state);
+            break;
+        case 4347:
+            ui->label_B4347->setVisible(state);
+            break;
+        case 4447:
+            ui->label_B4447->setVisible(state);
+            break;
+        case 4748:
+            ui->label_B4748->setVisible(state);
+            break;
+        case 4749:
+            ui->label_B4749->setVisible(state);
             break;
         }
 
@@ -976,9 +1030,6 @@ void MainWindow::changeLabelVisible(char color,int number, bool state){ // фу�
         case 1721:
             ui->label_G1721->setVisible(state);
             break;
-        case 1734:
-            ui->label_G1734->setVisible(state);
-            break;
         case 2134:
             ui->label_G2134->setVisible(state);
             break;
@@ -1020,6 +1071,36 @@ void MainWindow::changeLabelVisible(char color,int number, bool state){ // фу�
             break;
         case 3436:
             ui->label_G3436->setVisible(state);
+            break;
+        case 1749:
+            ui->label_G1749->setVisible(state);
+            break;
+        case 3449:
+            ui->label_G3449->setVisible(state);
+            break;
+        case 4146:
+            ui->label_G4146->setVisible(state);
+            break;
+        case 4546:
+            ui->label_G4546->setVisible(state);
+            break;
+        case 4246:
+            ui->label_G4246->setVisible(state);
+            break;
+        case 4649:
+            ui->label_G4649->setVisible(state);
+            break;
+        case 4347:
+            ui->label_G4347->setVisible(state);
+            break;
+        case 4447:
+            ui->label_G4447->setVisible(state);
+            break;
+        case 4748:
+            ui->label_G4748->setVisible(state);
+            break;
+        case 4749:
+            ui->label_G4749->setVisible(state);
             break;
         }
     }
