@@ -246,25 +246,6 @@ void MainWindow::channel_mode(){ // обработка для коммутаци
         }
         break;
     }
-    case 5:
-    {
-        int track[] = {35,3536,36,3637,37};
-        settings[5] = sizeof(track) / sizeof(int);
-        for (int i = 0; i<settings[5]; i++){
-            changeLabelVisible('R',track[i],true);
-        }
-        int track2[] = {28,2428,24,2124,21,2123,23,2325,25};
-        settings[5] = sizeof(track2) / sizeof(int);
-        for (int i = 0; i<settings[5]; i++){
-            changeLabelVisible('B',track2[i],true);
-        }
-        int track3[] = {13,1316,16,1617,17,1517,15,1215,12};
-        settings[5] = sizeof(track3) / sizeof(int);
-        for (int i = 0; i<settings[5]; i++){
-            changeLabelVisible('G',track3[i],true);
-        }
-        break;
-    }
     }
 }
 
@@ -297,7 +278,7 @@ void MainWindow::message_mode(){ // обработка для коммутаци
     }
     case 2:
     {
-        int track[] = {11,1115,15,1517,17,1617,16,1416,14};
+        int track[] = {26,2326,23,2123,21,2134,34,1734,17,1617,16,1316,13};
         int track2[] = {14,1416,16,1617,17,1721,21,2134,34,3234,32,3132,31};
         int track3[] = {22,2224,24,2124,21,2123,23,2326,26,0,0};
         settings[3] = sizeof(track2) / sizeof(int);
@@ -309,18 +290,6 @@ void MainWindow::message_mode(){ // обработка для коммутаци
     }
     case 3:
     {
-        int track[] = {26,2326,23,2123,21,2134,34,1734,17,1617,16,1316,13};
-        int track2[] = {14,1416,16,1617,17,1721,21,2134,34,3234,32,3132,31};
-        int track3[] = {22,2224,24,2124,21,2123,23,2326,26,0,0};
-        settings[3] = sizeof(track2) / sizeof(int);
-        changeLabelVisible('R',track[settings[2]], true);
-
-        if (settings[2] > 0) changeLabelVisible('B',track2[settings[2] -1], true);
-        if (settings[2] > 1) changeLabelVisible('G',track3[settings[2] -2], true);
-        break;
-    }
-    case 4:
-    {
         int track[] = {31,3132,32,3234,34,2134,21,2124,24,2427,27,0,0};
         int track2[] = {18,1618,16,1617,17,1721,21,2134,34,3436,36,3637,37,0};
         int track3[] = {37,3637,36,3436,34,1734,17,1617,16,1316,13};
@@ -331,7 +300,7 @@ void MainWindow::message_mode(){ // обработка для коммутаци
         if (settings[2] > 1) changeLabelVisible('G',track3[settings[2] -2], true);
         break;
     }
-    case 5:
+    case 4:
     {
         int track[] = {11,1115,15,1517,17,1617,16,1618,18,0};
         int track2[] = {22,2224,24,2124,21,2123,23,2325,25};
