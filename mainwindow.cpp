@@ -278,8 +278,8 @@ void MainWindow::message_mode(){ // обработка для коммутаци
     }
     case 2:
     {
-        int track[] = {26,2326,23,2123,21,2134,34,1734,17,1617,16,1316,13};
-        int track2[] = {14,1416,16,1617,17,1721,21,2134,34,3234,32,3132,31};
+        int track[] = {26,2326,23,2123,21,2134,34,3436,36,3536,35};
+        int track2[] = {14,1416,16,1617,17,1749,49,4649,46,4146,41,0,0};
         int track3[] = {22,2224,24,2124,21,2123,23,2326,26,0,0};
         settings[3] = sizeof(track2) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
@@ -290,10 +290,10 @@ void MainWindow::message_mode(){ // обработка для коммутаци
     }
     case 3:
     {
-        int track[] = {31,3132,32,3234,34,2134,21,2124,24,2427,27,0,0};
-        int track2[] = {18,1618,16,1617,17,1721,21,2134,34,3436,36,3637,37,0};
-        int track3[] = {37,3637,36,3436,34,1734,17,1617,16,1316,13};
-        settings[3] = sizeof(track) / sizeof(int);
+        int track[] = {31,3132,32,3234,34,2134,21,2124,24,2427,27,0,0,0,0,0};
+        int track2[] = {18,1618,16,1617,17,17,17,1721,21,2134,34,3436,36,3637,37};
+        int track3[] = {37,3637,36,36,3436,34,3449,49,4649,46,4246,42,0,0};
+        settings[3] = sizeof(track2) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
 
         if (settings[2] > 0) changeLabelVisible('B',track2[settings[2] -1], true);
