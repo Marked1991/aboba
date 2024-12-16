@@ -156,7 +156,7 @@ void MainWindow::channel_mode(){ // обработка для коммутаци
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('R',track[i],true);
         }
-        int track2[] = {41,4146,4649,49,3449,34,3436,36,3536};
+        int track2[] = {41,4146,4649,49,3449,34,3436,36,3536,35};
         settings[5] = sizeof(track2) / sizeof(int);
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('B',track2[i],true);
@@ -175,7 +175,7 @@ void MainWindow::channel_mode(){ // обработка для коммутаци
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('R',track[i],true);
         }
-        int track2[] = {25,2325,23,2123,21,2124,2224,22};
+        int track2[] = {25,2325,23,2123,21,2124,24,2224,22};
         settings[5] = sizeof(track2) / sizeof(int);
         for (int i = 0; i<settings[5]; i++){
             changeLabelVisible('B',track2[i],true);
