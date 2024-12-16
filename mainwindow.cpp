@@ -117,6 +117,7 @@ void MainWindow::on_stopBut_clicked()
 }
 
 void MainWindow::clean(){  // очистка всех обозначений пути
+
     int track[] = {11,12,13,14,15,16,17,18,21,22,23,24,25,26,27,28,31,32,33,34,35,36,37,1115,1215,
                    1517,1316,1416,1618,1721,2123,2325,2326,2124,2428,2822,2134,3132,3234,3233,3536,3637,3436,1734,1617,2224,2427,41,42,43,44,45,
                     46,47,48,49,1749,3449,4146,4546,4246,4649,4347,4447,4748,4749};
@@ -144,6 +145,7 @@ void MainWindow::clean(){  // очистка всех обозначений п�
         changeLabelVisible('p',0,true);
         break;
     }
+
 }
 
 void MainWindow::channel_mode(){ // обработка для коммутации каналов
@@ -271,23 +273,38 @@ void MainWindow::message_mode(){ // обработка для коммутаци
     switch(settings[1]){
     case 0:
     {
-        int track[] = {13,1316,16,1617,17,1734,34,3234,32,3233,33};
-        settings[3] = sizeof(track) / sizeof(int);
+        int track[] = {13,1316,16,1617,17,1749,49,3449,34,3234,32,3233,33};
+        int track2[] = {28,2428,24,2124,21,21,21,21,2134,34,3436,36,3536,35};
+        int track3[] = {41,4146,46,46,46,4649,49,4749,47,4447,44};
+        settings[3] = sizeof(track2) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > 0) changeLabelVisible('B',track2[settings[2] -1], true);
+        if (settings[2] > 1) changeLabelVisible('G',track3[settings[2] -2], true);
         break;
     }
     case 1:
     {
         int track[] = {35,3536,36,3436,34,2134,21,2124,24,2428,28};
-        settings[3] = sizeof(track) / sizeof(int);
+        int track2[] = {18,1618,16,1617,17,1749,49,4649,46,4246,42,0};
+        int track3[] = {11,1115,15,1517,17,1749,49,4749,47,4748,48};
+        settings[3] = sizeof(track2) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > -1) changeLabelVisible('B',track2[settings[2]], true);
+        if (settings[2] > 1) changeLabelVisible('G',track3[settings[2] -2], true);
         break;
     }
     case 2:
     {
         int track[] = {11,1115,15,1517,17,1617,16,1416,14};
-        settings[3] = sizeof(track) / sizeof(int);
+        int track2[] = {14,1416,16,1617,17,1721,21,2134,34,3234,32,3132,31};
+        int track3[] = {22,2224,24,2124,21,2123,23,2326,26,0,0};
+        settings[3] = sizeof(track2) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
+
+        if (settings[2] > 0) changeLabelVisible('B',track2[settings[2] -1], true);
+        if (settings[2] > 1) changeLabelVisible('G',track3[settings[2] -2], true);
         break;
     }
     case 3:
@@ -454,14 +471,14 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
 void MainWindow::timerControl(int mode){
     switch (mode){
     case 1:
-        timer ->start(150*(300-settings[4])/300);
+        timer ->start(500*(300-settings[4])/300);
         break;
     case 0:
         timer -> stop();
         break;
     case 2:
         timer->stop();
-        timer->start(150*(300-settings[4])/300);
+        timer->start(500*(300-settings[4])/300);
         break;
 
     }
@@ -472,7 +489,7 @@ void MainWindow::timerControl(int mode){
 
 void MainWindow::startRotate(){
     // поворот линий
-    rotate_lable(":/img/LinePackets.png", ui->label_1115, 9);
+    rotate_lable(":/img/LinePackets.png", ui->label_1115, 5);
     rotate_lable(":/img/LinePackets.png", ui->label_1215, -18);
     rotate_lable(":/img/LinePackets.png", ui->label_1517, 15);
     rotate_lable(":/img/LinePackets.png", ui->label_2123, -13);
