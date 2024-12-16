@@ -6,5 +6,15 @@
         <file>BAB_check.png</file>
         <file>frame_logo.png</file>
         <file>GAB_check.png</file>
+        <file>LinePackets.png</file>
+        <file>Line1734.png</file>
+        <file>Line2134.png</file>
+        <file>BLinePackets.png</file>
+        <file>BLine1734.png</file>
+        <file>BLine2134.png</file>
+        <file>GLine1734.png</file>
+        <file>GLine2134.png</file>
+        <file>GLinePackets.png</file>
+        <file>svaz.png</file>
     </qresource>
 </RCC>

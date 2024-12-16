@@ -1232,6 +1232,3 @@ void MainWindow::rotate_lable(char* file_name, QLabel* map, float angle){ // Ñ„Ñ
     map->setPixmap(rotate);
 
 }
-
-
-
