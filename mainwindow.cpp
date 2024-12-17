@@ -357,74 +357,24 @@ void MainWindow::packet_mode(){ // обработка для коммутаци�
     }
     case 3:
     {
-        int track11[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0,0};
-        int track12[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0};
-        int track13[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13};
-        int track21[] = {0,11,1115,15,1517,17,1734,34,2134,21,24,2428,28,0,0};
-        int track22[] = {0,11,1115,15,1517,17,1734,34,2134,21,24,2428,28,0};
-        int track23[] = {0,11,1115,15,1517,17,1734,34,2134,21,24,2428,28};
-        settings[3] = sizeof(track11) / sizeof(int);
+        int track11[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,13,13,13,13,13,13};
+        int track12[] = {22,22,22,2224,24,2124,21,2134,34,3449,49,1749,17,1617,16,1316,13};
+        int track13[] = {22,22,22,22,22,2224,24,2124,21,1721,17,1617,16,1316,13,13,13};
+        settings[3] = sizeof(track12) / sizeof(int);
         changeLabelVisible('R',track11[settings[2]], true);
-        changeLabelVisible('G',track21[settings[2]], true);
-
-        if (settings[2] > 0){
-            changeLabelVisible('R',track11[settings[2] -1], true);
-            changeLabelVisible('G',track21[settings[2] -1], true);
-        }
-        if (settings[2] > 1){
-            changeLabelVisible('R',track11[settings[2]-2], true);
-            changeLabelVisible('G',track21[settings[2]-2], true);
-        }
+        changeLabelVisible('G',track12[settings[2]], true);
+        changeLabelVisible('B',track13[settings[2]], true);
         break;
     }
     case 4:
     {
-        int track11[] = {31,3132,32,3234,34,3436,36,3637,37,0,0};
-        int track12[] = {31,3132,32,3234,34,3436,36,3637,37,0};
-        int track13[] = {31,3132,32,3234,34,3436,36,3637,37};
-        int track21[] = {11,1115,15,1517,17,1617,16,1618,18,0,0};
-        int track22[] = {11,1115,15,1517,17,1617,16,1618,18,0};
-        int track23[] = {11,1115,15,1517,17,1617,16,1618,18};
+        int track11[] = {31,3132,32,3234,34,3449,49,4649,46,4246,42,42,42,42,42,42,42,42,42,42,42};
+        int track12[] = {31,31,31,31,3132,32,3234,34,2134,21,1721,17,1749,49,4649,46,4246,42,42,42,42};
+        int track13[] = {31,31,31,31,31,31,3132,32,32,3234,34,2134,21,1721,17,1749,49,4649,46,4246,42};
         settings[3] = sizeof(track11) / sizeof(int);
         changeLabelVisible('R',track11[settings[2]], true);
-        changeLabelVisible('R',track21[settings[2]], true);
-
-        if (settings[2] > 0){
-            changeLabelVisible('B',track11[settings[2] -1], true);
-            changeLabelVisible('B',track21[settings[2] -1], true);
-        }
-        if (settings[2] > 1){
-            changeLabelVisible('G',track11[settings[2]-2], true);
-            changeLabelVisible('G',track21[settings[2]-2], true);
-        }
-        break;
-    }
-    case 5:
-    {
-        int track11[] = {31,3132,32,3234,34,3436,36,3637,37,0,0};
-        int track12[] = {31,3132,32,3234,34,3436,36,3637,37,0};
-        int track13[] = {31,3132,32,3234,34,3436,36,3637,37};
-        int track21[] = {11,1115,15,1517,17,1617,16,1618,18,0,0};
-        int track22[] = {11,1115,15,1517,17,1617,16,1618,18,0};
-        int track23[] = {11,1115,15,1517,17,1617,16,1618,18};
-        int track31[] = {26,2326,23,2123,21,2124,24,2224,22,0,0};
-        int track32[] = {26,2326,23,2123,21,2124,24,2224,22,0};
-        int track33[] = {26,2326,23,2123,21,2124,24,2224,22};
-        settings[3] = sizeof(track11) / sizeof(int);
-        changeLabelVisible('R',track11[settings[2]], true);
-        changeLabelVisible('R',track21[settings[2]], true);
-        changeLabelVisible('R',track31[settings[2]], true);
-
-        if (settings[2] > 0){
-            changeLabelVisible('B',track12[settings[2] -1], true);
-            changeLabelVisible('B',track22[settings[2] -1], true);
-            changeLabelVisible('B',track32[settings[2] -1], true);
-        }
-        if (settings[2] > 1){
-            changeLabelVisible('G',track13[settings[2]-2], true);
-            changeLabelVisible('G',track23[settings[2]-2], true);
-            changeLabelVisible('G',track33[settings[2]-2], true);
-        }
+        changeLabelVisible('G',track12[settings[2]], true);
+        changeLabelVisible('B',track13[settings[2]], true);
         break;
     }
     }
@@ -436,18 +386,17 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
     timerControl(2);
 }
 
-
 void MainWindow::timerControl(int mode){
     switch (mode){
     case 1:
-        timer ->start(500*(300-settings[4])/300);
+        timer ->start(500*(300-settings[4])/200);
         break;
     case 0:
         timer -> stop();
         break;
     case 2:
         timer->stop();
-        timer->start(500*(300-settings[4])/300);
+        timer->start(500*(300-settings[4])/200);
         break;
 
     }
@@ -455,69 +404,98 @@ void MainWindow::timerControl(int mode){
 
 }
 
-
 void MainWindow::startRotate(){
     // поворот линий
-    rotate_lable(":/img/LinePackets.png", ui->label_1115, 5);
-    rotate_lable(":/img/LinePackets.png", ui->label_1215, -18);
-    rotate_lable(":/img/LinePackets.png", ui->label_1517, 15);
-    rotate_lable(":/img/LinePackets.png", ui->label_2123, -13);
-    rotate_lable(":/img/LinePackets.png", ui->label_2325, -10);
-    rotate_lable(":/img/LinePackets.png", ui->label_2326, 10);
-    rotate_lable(":/img/LinePackets.png", ui->label_1316, 9);
-    rotate_lable(":/img/LinePackets.png", ui->label_1617, -21);
-    rotate_lable(":/img/LinePackets.png", ui->label_1416, -18);
-    rotate_lable(":/img/LinePackets.png", ui->label_1618, 12);
-    rotate_lable(":/img/LinePackets.png", ui->label_2427, -11);
-    rotate_lable(":/img/LinePackets.png", ui->label_2428, 18);
-    rotate_lable(":/img/LinePackets.png", ui->label_2124, 21);
-    rotate_lable(":/img/LinePackets.png", ui->label_2224, -10);
-    rotate_lable(":/img/LinePackets.png", ui->label_3234, -22);
-    rotate_lable(":/img/LinePackets.png", ui->label_3132, -22);
-    rotate_lable(":/img/LinePackets.png", ui->label_3233, 20);
-    rotate_lable(":/img/LinePackets.png", ui->label_3436, 19);
-    rotate_lable(":/img/LinePackets.png", ui->label_3536, -14);
-    rotate_lable(":/img/LinePackets.png", ui->label_3637, 11);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B1115, 9);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B1215, -18);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B1517, 15);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B1617, -21);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B1316, 9);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B1416, -18);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B1618, 12);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B2123, -13);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B2325, -10);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B2124, 21);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B2326, 10);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B2427, -11);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B2428, 18);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B2224, -10);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B3234, -22);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B3436, 19);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B3637, 11);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B3536, -14);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B3233, 20);
-    rotate_lable(":/img/BLinePackets.png", ui->label_B3132, -22);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G1115, 9);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G1215, -18);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G1517, 15);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G1617, -21);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G1316, 9);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G1416, -18);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G1618, 12);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G2123, -13);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G2325, -10);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G2326, 10);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G2124, 21);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G2427, -11);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G2428, 18);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G2224, -10);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G3436, 19);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G3234, -22);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G3637, 11);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G3536, -14);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G3233, 20);
-    rotate_lable(":/img/GLinePackets.png", ui->label_G3132, -22);
+    rotate_lable(":/img/LinePackets.png", ui->label_1115, 4);
+    rotate_lable(":/img/LinePackets.png", ui->label_1215, -13);
+    rotate_lable(":/img/LinePackets.png", ui->label_1517, 18);
+    rotate_lable(":/img/LinePackets.png", ui->label_2123, -24);
+    rotate_lable(":/img/LinePackets.png", ui->label_2325, -11);
+    rotate_lable(":/img/LinePackets.png", ui->label_2326, 11);
+    rotate_lable(":/img/LinePackets.png", ui->label_1316, 4);
+    rotate_lable(":/img/LinePackets.png", ui->label_1617, -12);
+    rotate_lable(":/img/LinePackets.png", ui->label_1416, -7);
+    rotate_lable(":/img/LinePackets.png", ui->label_1618, 38);
+    rotate_lable(":/img/LinePackets.png", ui->label_2427, -15);
+    rotate_lable(":/img/LinePackets.png", ui->label_2428, 17);
+    rotate_lable(":/img/LinePackets.png", ui->label_2124, 16);
+    rotate_lable(":/img/LinePackets.png", ui->label_2224, -38);
+    rotate_lable(":/img/LinePackets.png", ui->label_3234, -40);
+    rotate_lable(":/img/LinePackets.png", ui->label_3132, -45);
+    rotate_lable(":/img/LinePackets.png", ui->label_3233, 47);
+    rotate_lable(":/img/LinePackets.png", ui->label_3436, 22);
+    rotate_lable(":/img/LinePackets.png", ui->label_3536, -57);
+    rotate_lable(":/img/LinePackets.png", ui->label_3637, 15);
+    rotate_lable(":/img/LinePackets.png", ui->label_1749, 90);
+    rotate_lable(":/img/LinePackets.png", ui->label_2134, 90);
+    rotate_lable(":/img/LinePackets.png", ui->label_4749, 23);
+    rotate_lable(":/img/LinePackets.png", ui->label_4649, -23);
+    rotate_lable(":/img/LinePackets.png", ui->label_4748, -5);
+    rotate_lable(":/img/LinePackets.png", ui->label_4447, 29);
+    rotate_lable(":/img/LinePackets.png", ui->label_4347, -12);
+    rotate_lable(":/img/LinePackets.png", ui->label_4246, 60);
+    rotate_lable(":/img/LinePackets.png", ui->label_4146, -23);
+    rotate_lable(":/img/LinePackets.png", ui->label_4546, 4);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1115, 4);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1215, -13);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1517, 18);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1617, -12);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1316, 4);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1416, -7);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1618, 38);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2123, -24);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2325, -11);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2124, 16);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2326, 11);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2427, -15);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2428, 17);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2224, -38);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3234, -40);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3436, 22);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3637, 15);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3536, -57);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3233, 47);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B3132, -45);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B1749, 90);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B2134, 90);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B4749, 23);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B4649, -23);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B4748, -5);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B4447, 29);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B4347, -12);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B4246, 60);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B4146, -23);
+    rotate_lable(":/img/BLinePackets.png", ui->label_B4546, 4);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1115, 4);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1215, -13);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1517, 18);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1617, -12);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1316, 4);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1416, -7);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1618, 38);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2123, -24);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2325, -11);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2124, 16);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2326, 11);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2427, -15);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2428, 17);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2224, -38);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3234, -40);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3436, 22);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3637, 15);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3536, -57);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3233, 47);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G3132, -45);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G1749, 90);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G2134, 90);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G4749, 23);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G4649, -23);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G4748, -5);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G4447, 29);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G4347, -12);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G4246, 60);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G4146, -23);
+    rotate_lable(":/img/GLinePackets.png", ui->label_G4546, 4);
 
 }
 
@@ -1204,6 +1182,3 @@ void MainWindow::rotate_lable(char* file_name, QLabel* map, float angle){ // ф�
     map->setPixmap(rotate);
 
 }
-
-
-
