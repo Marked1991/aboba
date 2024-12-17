@@ -353,74 +353,24 @@ void MainWindow::packet_mode(){ // обработка для коммутаци�
     }
     case 3:
     {
-        int track11[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0,0};
-        int track12[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,0};
-        int track13[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13};
-        int track21[] = {0,11,1115,15,1517,17,1734,34,2134,21,24,2428,28,0,0};
-        int track22[] = {0,11,1115,15,1517,17,1734,34,2134,21,24,2428,28,0};
-        int track23[] = {0,11,1115,15,1517,17,1734,34,2134,21,24,2428,28};
-        settings[3] = sizeof(track11) / sizeof(int);
+        int track11[] = {22,2224,24,2124,21,1721,17,1617,16,1316,13,13,13,13,13,13,13};
+        int track12[] = {22,22,22,2224,24,2124,21,2134,34,3449,49,1749,17,1617,16,1316,13};
+        int track13[] = {22,22,22,22,22,2224,24,2124,21,1721,17,1617,16,1316,13,13,13};
+        settings[3] = sizeof(track12) / sizeof(int);
         changeLabelVisible('R',track11[settings[2]], true);
-        changeLabelVisible('G',track21[settings[2]], true);
-
-        if (settings[2] > 0){
-            changeLabelVisible('R',track11[settings[2] -1], true);
-            changeLabelVisible('G',track21[settings[2] -1], true);
-        }
-        if (settings[2] > 1){
-            changeLabelVisible('R',track11[settings[2]-2], true);
-            changeLabelVisible('G',track21[settings[2]-2], true);
-        }
+        changeLabelVisible('G',track12[settings[2]], true);
+        changeLabelVisible('B',track13[settings[2]], true);
         break;
     }
     case 4:
     {
-        int track11[] = {31,3132,32,3234,34,3436,36,3637,37,0,0};
-        int track12[] = {31,3132,32,3234,34,3436,36,3637,37,0};
-        int track13[] = {31,3132,32,3234,34,3436,36,3637,37};
-        int track21[] = {11,1115,15,1517,17,1617,16,1618,18,0,0};
-        int track22[] = {11,1115,15,1517,17,1617,16,1618,18,0};
-        int track23[] = {11,1115,15,1517,17,1617,16,1618,18};
+        int track11[] = {31,3132,32,3234,34,3449,49,4649,46,4246,42,42,42,42,42,42,42,42,42,42,42};
+        int track12[] = {31,31,31,31,3132,32,3234,34,2134,21,1721,17,1749,49,4649,46,4246,42,42,42,42};
+        int track13[] = {31,31,31,31,31,31,3132,32,32,3234,34,2134,21,1721,17,1749,49,4649,46,4246,42};
         settings[3] = sizeof(track11) / sizeof(int);
         changeLabelVisible('R',track11[settings[2]], true);
-        changeLabelVisible('R',track21[settings[2]], true);
-
-        if (settings[2] > 0){
-            changeLabelVisible('B',track11[settings[2] -1], true);
-            changeLabelVisible('B',track21[settings[2] -1], true);
-        }
-        if (settings[2] > 1){
-            changeLabelVisible('G',track11[settings[2]-2], true);
-            changeLabelVisible('G',track21[settings[2]-2], true);
-        }
-        break;
-    }
-    case 5:
-    {
-        int track11[] = {31,3132,32,3234,34,3436,36,3637,37,0,0};
-        int track12[] = {31,3132,32,3234,34,3436,36,3637,37,0};
-        int track13[] = {31,3132,32,3234,34,3436,36,3637,37};
-        int track21[] = {11,1115,15,1517,17,1617,16,1618,18,0,0};
-        int track22[] = {11,1115,15,1517,17,1617,16,1618,18,0};
-        int track23[] = {11,1115,15,1517,17,1617,16,1618,18};
-        int track31[] = {26,2326,23,2123,21,2124,24,2224,22,0,0};
-        int track32[] = {26,2326,23,2123,21,2124,24,2224,22,0};
-        int track33[] = {26,2326,23,2123,21,2124,24,2224,22};
-        settings[3] = sizeof(track11) / sizeof(int);
-        changeLabelVisible('R',track11[settings[2]], true);
-        changeLabelVisible('R',track21[settings[2]], true);
-        changeLabelVisible('R',track31[settings[2]], true);
-
-        if (settings[2] > 0){
-            changeLabelVisible('B',track12[settings[2] -1], true);
-            changeLabelVisible('B',track22[settings[2] -1], true);
-            changeLabelVisible('B',track32[settings[2] -1], true);
-        }
-        if (settings[2] > 1){
-            changeLabelVisible('G',track13[settings[2]-2], true);
-            changeLabelVisible('G',track23[settings[2]-2], true);
-            changeLabelVisible('G',track33[settings[2]-2], true);
-        }
+        changeLabelVisible('G',track12[settings[2]], true);
+        changeLabelVisible('B',track13[settings[2]], true);
         break;
     }
     }
@@ -1228,6 +1178,3 @@ void MainWindow::rotate_lable(char* file_name, QLabel* map, float angle){ // ф�
     map->setPixmap(rotate);
 
 }
-
-
-
