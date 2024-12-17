@@ -321,33 +321,31 @@ void MainWindow::packet_mode(){ // обработка для коммутаци�
     switch(settings[1]){
     case 0:
     {
-        int track[] = {11,1115,15,1517,17,1721,21,2124,24,2428,28,0,0};
-        int track2[] = {11,1115,15,1517,17,1734,34,2134,21,24,2428,28,0};
-        int track3[] = {11,1115,15,1517,17,1721,21,2124,24,2428,28};
+        int track[] = {11,1115,15,1517,17,1721,21,2124,24,2428,28,28,28,28,28,28,28,28,28,28,28};
+        int track2[] = {11,11,11,1115,15,1517,17,1749,49,3449,34,2134,21,2124,24,2428,28,28,28,28,28};
+        int track3[] = {11,11,11,11,11,11,1115,15,1517,17,1721,21,2123,23,2123,2123,21,2124,24,2428,28};
         settings[3] = sizeof(track) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
-
-        if (settings[2] > 0) changeLabelVisible('G',track2[settings[2] -1], true);
-        if (settings[2] > 1) changeLabelVisible('B',track3[settings[2] -2], true);
+        changeLabelVisible('G',track2[settings[2]], true);
+        changeLabelVisible('B',track3[settings[2]], true);
         break;
     }
     case 1:
     {
-        int track[] = {31,3132,32,3234,34,2134,21,2123,23,2326,26,0,0};
-        int track2[] = {31,3132,32,3234,34,1734,17,1721,21,2123,23,2326,26,0};
-        int track3[] = {31,3132,32,3234,34,2134,21,2123,23,2326,26};
+        int track[] = {31,3132,32,3234,34,2134,21,2123,23,2326,26,26,26,26,26,26,26,26,26,26,26,26,26,26};
+        int track2[] = {31,31,31,3132,32,3233,33,3233,32,3234,34,2134,21,2123,23,2326,26,26,26,26,26,26,26,26};
+        int track3[] = {31,31,31,31,31,3132,32,3234,34,3449,49,1749,17,1517,15,1517,17,1721,21,2123,23,2326,26,26};
         settings[3] = sizeof(track) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
-
-        if (settings[2] > 0) changeLabelVisible('G',track2[settings[2] -1], true);
-        if (settings[2] > 1) changeLabelVisible('B',track3[settings[2] -2], true);
+        changeLabelVisible('G',track2[settings[2]], true);
+        changeLabelVisible('B',track3[settings[2]], true);
         break;
     }
     case 2:
     {
-        int track[] = {28,2428,24,2124,21,1721,17,1517,15,1215,12,0,0};
-        int track2[] = {28,2428,24,2124,21,1721,17,1517,15,1215,12,0};
-        int track3[] = {28,2428,24,2124,21,1721,17,1517,15,1215,12};
+        int track[] = {28,2428,24,2124,21,1721,17,1617,16,1617,17,1517,15,1215,12};
+        int track2[] = {28,2428,24,2124,21,2123,23,2123,21,1721,17,1517,15,1215,12};
+        int track3[] = {28,2428,24,2124,21,1721,17,1517,15,1215,12,12,0,0};
         settings[3] = sizeof(track) / sizeof(int);
         changeLabelVisible('R',track[settings[2]], true);
 
